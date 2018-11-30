@@ -1,0 +1,6 @@
+subscription_id =   ""
+location        =   "Central US"
+access_key      =   ""
+environment     =   "development"
+project_name    =   "infra-phcaguiar"
+vnet_cidr       =   "172.17.0.0/16"
