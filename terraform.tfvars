@@ -1,6 +1,6 @@
 subscription_id =   ""
-location        =   "Central US"
+location        =   "centralus"
 access_key      =   ""
 environment     =   "development"
-project_name    =   "infra-phcaguiar"
+project_name    =   "azure-sample"
 vnet_cidr       =   "172.17.0.0/16"
