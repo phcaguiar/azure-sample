@@ -1,6 +1,6 @@
 subscription_id =   ""
 location        =   "centralus"
 access_key      =   ""
-environment     =   "staging"
+environment     =   "development"
 project_name    =   "azure-sample"
 vnet_cidr       =   "10.0.0.0/16"
