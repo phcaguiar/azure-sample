@@ -15,7 +15,7 @@ module "resource_group" {
 # }
 
 module "virtual_network" {
-   source                   =   "git::https://github.com/phcaguiar/terraform-az-virtual-network.git?ref=v1.0.0"
+   source                   =   "git::https://github.com/phcaguiar/terraform-az-virtual-network.git?ref=v1.0.1"
    virtual_network_name     =   "${var.project_name}-${var.environment}"
    location                 =   "${var.location}"
    azure_resource_group     =   "${module.resource_group.azure_resource_group}"
@@ -32,3 +32,19 @@ module "virtual_network" {
 #    location             =   "${var.location}"
 #    tag_team             =   "${var.project_name}"
 # }
+
+module "subnet_1" {
+   source                   =   "git::https://github.com/phcaguiar/terraform-az-subnet.git?ref=v1.0.1"
+   subnet_name              =   "${var.project_name}-${var.environment}-1"
+   virtual_network_name     =   "${module.virtual_network.virtual_network_name}"
+   azure_resource_group     =   "${module.resource_group.azure_resource_group}"
+   subnet_prefixe           =   "${(cidrsubnet(var.vnet_cidr,8,0))}"
+}
+
+module "subnet_2" {
+   source                   =   "git::https://github.com/phcaguiar/terraform-az-subnet.git?ref=v1.0.1"
+   subnet_name              =   "${var.project_name}-${var.environment}-2"
+   virtual_network_name     =   "${module.virtual_network.virtual_network_name}"
+   azure_resource_group     =   "${module.resource_group.azure_resource_group}"
+   subnet_prefixe           =   "${(cidrsubnet(var.vnet_cidr,8,1))}"
+}
