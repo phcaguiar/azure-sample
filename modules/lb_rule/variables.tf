@@ -1,0 +1,12 @@
+variable "name"                 {}
+variable "loadbalancer_id"             {}
+variable "protocol"        {}
+variable "resource_group_name"  {}
+variable "frontend_port"  {}
+variable "backend_port"  {}
+variable "frontend_ip_configuration_name"  {}
+variable "enable_floating_ip"  {}
+variable "backend_address_pool_id"  {}
+variable "idle_timeout_in_minutes"  {}
+variable "probe_id"  {}
+variable "depends_on"  {}
