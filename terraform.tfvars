@@ -1,6 +1,0 @@
-subscription_id =   ""
-location        =   "centralus"
-access_key      =   ""
-environment     =   "production"
-project_name    =   "azure-sample"
-vnet_cidr       =   "10.2.0.0/16"
