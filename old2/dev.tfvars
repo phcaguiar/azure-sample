@@ -1,0 +1,5 @@
+subscription_id =   "ba5141a2-2132-4e5a-b88d-d61f5a175fbe"
+location        =   "centralus"
+environment     =   "dev"
+tribe_name      =   "financialit-sample"
+vnet_cidr       =   "10.0.0.0/16"
