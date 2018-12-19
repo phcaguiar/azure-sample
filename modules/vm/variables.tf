@@ -1,0 +1,15 @@
+variable "name"                 {}
+variable "location"             {}
+variable "availability_set_id"        {}
+variable "resource_group_name"  {}
+variable "vm_size"                 {}
+variable "network_interface_ids"             {}
+variable "image_publisher"        {}
+variable "image_offer"  {}
+variable "image_sku"                 {}
+variable "image_version"             {}
+variable "storage_os_disk_name"        {}
+variable "storage_os_disk_create_option"  {}
+variable "os_profile_computer_name"                 {}
+variable "os_profile_admin_username"  {}
+variable "os_profile_admin_password"  {}

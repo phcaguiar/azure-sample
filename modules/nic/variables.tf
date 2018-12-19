@@ -1,0 +1,9 @@
+variable "name"                 {}
+variable "location"             {}
+variable "network_security_group_id"        {}
+variable "resource_group_name"  {}
+variable "ip_configuration_name"  {}
+variable "ip_configuration_subnet_id"  {}
+variable "ip_configuration_private_ip_address_allocation"  {}
+variable "ip_configuration_load_balancer_backend_address_pools_ids"  {}
+#variable "ip_configuration_load_balancer_inbound_nat_rules_ids"  {}

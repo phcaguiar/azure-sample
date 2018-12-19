@@ -106,3 +106,35 @@ module "lb_probe" {
    interval_in_seconds = 5
    number_of_probes    = 2
 }
+
+module "nic" {
+   source                                                   =  "./modules/nic"   
+   name                                                     =  "${var.tribe_name}"
+   location                                                 =  "${var.location}"
+   resource_group_name                                      =  "${module.resource_group.rg_name}"
+#   network_security_group_id                               =  "${module.security_group.sg_id}"
+   network_security_group_id                                =  ""
+   ip_configuration_name                                    =  "ipconfig0"
+   ip_configuration_subnet_id                               =  "${module.public_subnet.subnet_id}"
+   ip_configuration_private_ip_address_allocation           =  "Dynamic"
+   ip_configuration_load_balancer_backend_address_pools_ids =  "${module.backend_pool.backend_pool_id}"
+#   ip_configuration_load_balancer_inbound_nat_rules_ids     =  ""
+}
+module "vm" {
+   source                        =  "./modules/vm"   
+   name                          =  "${var.tribe_name}"
+   location                      =  "${var.location}"
+   resource_group_name           =  "${module.resource_group.rg_name}"
+   availability_set_id           =  "${module.avset.avset_id}"
+   vm_size                       =  "${var.vm_size}"
+   network_interface_ids         =  "${module.nic.nic_id}"
+   image_publisher               =  "${var.image_publisher}"
+   image_offer                   =  "${var.image_offer}"
+   image_sku                     =  "${var.image_sku}"
+   image_version                 =  "${var.image_version}"
+   storage_os_disk_name          =  "osdisk0"
+   storage_os_disk_create_option =  "FromImage"
+   os_profile_computer_name      =  "${var.hostname}"
+   os_profile_admin_username     =  "${var.admin_username}"
+   os_profile_admin_password     =  "${var.admin_password}"
+}
